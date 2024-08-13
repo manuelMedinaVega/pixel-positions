@@ -77,11 +77,39 @@
 						"FromPort": "22",
 						"ToPort": "22",
 						"CidrIp": "0.0.0.0/0"
+					},
+                    {
+						"IpProtocol": "tcp",
+						"FromPort": "80",
+						"ToPort": "80",
+						"CidrIp": "0.0.0.0/0"
+					},
+                    {
+						"IpProtocol": "tcp",
+						"FromPort": "443",
+						"ToPort": "443",
+						"CidrIp": "0.0.0.0/0"
 					}
 				],
 				"VpcId": {
 					"Ref": "VPC"
 				}
+			}
+		},
+        "EC2Instance": {
+			"Type": "AWS::EC2::Instance",
+			"Properties": {
+				"ImageId": "ami-003932de22c285676", 
+				"InstanceType": "t2.micro",
+				"KeyName": "laracastsec2",
+				"SubnetId": {
+					"Ref": "PublicSubnet"
+				},
+				"SecurityGroupIds": [
+					{
+						"Ref": "SecurityGroup"
+					}
+				]
 			}
 		}
 	}
