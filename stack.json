@@ -99,7 +99,7 @@
         "EC2Instance": {
 			"Type": "AWS::EC2::Instance",
 			"Properties": {
-				"ImageId": "ami-003932de22c285676", 
+				"ImageId": "ami-0862be96e41dcbf74", 
 				"InstanceType": "t2.micro",
 				"KeyName": "laracastsec2",
 				"SubnetId": {
